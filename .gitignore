@@ -1,0 +1,13 @@
+# Compiled class file
+*.class
+
+# project files
+*.project
+
+# project temp files
+*.opensdf
+
+# classpath files
+*.classpath
+
+

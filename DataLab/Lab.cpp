@@ -26,17 +26,44 @@ int getByte(int x, int n) {
 
 }
 
+int logicalShift(int x, int n){
+	return -1;
+}
+
+/*
+计算x的二进制中为1的个数
+*/
+int bitCount(int x){
+	int n = (1 << 3) << 2;//int类型共 32位
+	int count = 0;
+	for (int pos = n - 1; pos >= 0; pos--)
+	{
+		int m = 1 << pos;
+		if ((m&x) == m)//注意 & 和 == 优先级 ==> &
+			count++;
+	}
+	return count;
+}
+
 void main()
 {
 	int min = tmin();
 	printf("min int :%d\n", min);
+	//printf("sizeof(int) %d", sizeof(int));
+	//printf("1 & 0= %d\n", bitAnd(6, 5));
+	//printf("3 & 0= %d\n", bitAnd(3, 0));
+	//printf("3 & 4= %d\n", bitAnd(3, 4));
+	//printf("0x12345678右移结果%0x", getByte(0x12345678, 1));
 
 
-	printf("1 & 0= %d\n", bitAnd(6, 5));
-	printf("3 & 0= %d\n", bitAnd(3, 0));
-	printf("3 & 4= %d\n", bitAnd(3, 4));
-	printf("0x12345678右移结果%0x", getByte(0x12345678, 1));
-
+	int x = 3;
+	printf("%d  bitCount = %d\n",x, bitCount(x));
+	x = 7;
+	printf("%d  bitCount = %d\n", x, bitCount(x));
+	x = (1<<31)+7 ;
+	printf("%d  bitCount = %d\n", x, bitCount(x));
+	x = 8;
+	printf("%d  bitCount = %d\n", x, bitCount(x));
 	int num;
 	printf("请输入整数");
 	scanf_s("%d", &num);

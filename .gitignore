@@ -6,6 +6,9 @@
 
 # project temp files
 *.opensdf
+*.exe
+*.pdb
+
 
 # classpath files
 *.classpath
